@@ -1,19 +1,17 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+function iFrame(executionContext) {
+  var formContext = executionContext.getFormContext();
+        var Output= formContext.getAttribute("websiteurl").getValue();
+        var testMessage = " iFrame_WebResource Running On This Form : Diable This Alert When Finalized";
+        var iFrameControl = formContext.ui.controls.get("IFRAME_leadSourceiFrame");
+        var iFrameUrl = iFrameControl.getSrc("IFRAME_leadSourceiFrame");  
+         {
+          alert("The iFrame is connecting to its source : " + Input); 
+         }
+         if(Input == 8)
+           {
+          newURL = Output;
+          formContext.getControl("IFRAME_leadSourceiFrame").setSrc(Output);
+          formContext.getControl("IFRAME_leadSourceiFrame").setVisible(true);     
+           }   
+      }
+  
